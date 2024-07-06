@@ -48,9 +48,9 @@ export const QuizQuestion: React.FC<QuizQuestionProps> = ({ question, onAnswer, 
       );
     case 'multiSelect':
       return (
-        <div>
-          {question.options?.map((option) => (
-            <div key={option} className="flex items-center space-x-2">
+        <div className="space-y-2">
+          {question.options?.map((option,optionIndex) => (
+            <div key={optionIndex} className="flex items-center space-x-2">
               <Checkbox
                 id={option}
                 checked={selectedOptions.includes(option)}
