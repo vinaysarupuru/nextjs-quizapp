@@ -38,11 +38,15 @@ export const QuizLayout: React.FC<QuizLayoutProps> = ({
         <h2 className="text-xl font-semibold mb-4">
           Question {currentQuestionIndex + 1} of {quiz.questions.length}
         </h2>
+        <div className="mb-4">
+        <h2 className="text-xl font-semibold mb-2">{currentQuestion.question}</h2>
         <QuizQuestion 
           question={currentQuestion} 
           onAnswer={onAnswer} 
           currentAnswer={userAnswers[currentQuestion.id]}
         />
+      </div>
+       
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button onClick={onPrevious} disabled={currentQuestionIndex === 0} variant="outline">
